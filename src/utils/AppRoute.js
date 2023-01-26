@@ -1,24 +1,31 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 
 
-const AppRoute = ({
-    component: Component,
-    layout: Layout,
-    ...rest
-  }) => {
-  
-   
-    Layout = (Layout === undefined) ? props => (<div>{props.children}</div>) : Layout;
+import {  Routes, Route,useLocation } from "react-router-dom";
+import {AnimatePresence} from 'framer-motion'
+
+
+import HomeLayout from '../layouts/HomeLayout';
+import AboutLayout from '../layouts/AboutLayout';
+import ServiceLayout from '../layouts/ServiceLayout';
+import IndustryLayout from '../layouts/IndustryLayout';
+import ContactLayout from '../layouts/ContactUsLayout';
+
+const AppRoute = () => {
+  const location=useLocation();
   
     return (
-      <Route
-        {...rest}
-        render={props => (
-          <Layout>
-            <Component {...props} />
-          </Layout>
-        )} />
+     <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<HomeLayout />} />
+      <Route path="/service" element={<ServiceLayout />} />
+      <Route path="/industries" element={<IndustryLayout />} />
+      <Route path="/about" element={<AboutLayout />} />
+      <Route path="/contact" element={<ContactLayout />} />
+    </Routes>
+
+      </AnimatePresence>
+
     );
   }
   

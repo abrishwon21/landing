@@ -1,10 +1,51 @@
 import styled from "styled-components";
+export const TContainer=styled.div`
+width:100%
+display: flex;
+flex-direction: column;
+justify-content:space-between;
+text-align: center;  
+.newBtn{
 
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    padding: 14px 29px;
+    text-transform: uppercase;
+    border-radius: 60px;
+    background-color: #000;
+    text-decoration: none;
+    border: 1px solid #fff;
+
+    position: relative;
+    text-align: center;
+
+    box-sizing: border-box;
+    transition: all .3s;
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom:2rem;
+    margin-top:2rem;
+    @media(max-width:700px){
+        transform:translateX(0%);
+    }
+    &:hover{
+        background-color: #fff;
+        color: #000;
+        border-color: #000;
+    
+    }
+  }
+
+`
 export const Banner=styled.div`
+
 margin:0;
 width:100%;
 height:100vh;
 top:50px;
+
 @media (max-width: 700px) {
     height:66vh;
   }
@@ -15,7 +56,20 @@ height:100%;
 object-fit:cover;
 top:50px;
 `
-
+export const VidCover=styled.div`
+position:absolute;
+top:80px;
+height:100vh;
+width:100%;
+margin:0;
+background-color: #D8DCDD;
+opacity:0.6;
+z-index:1;
+@media (max-width: 700px) {
+    height:60vh;
+    top:110px;
+  }
+`
 export const Overlay = styled.div`
 
 display:flex;
@@ -25,10 +79,11 @@ height:100%;
 left:5%;
 justify-content:center;
 align-items:flex-start;
-top:100px;
+top:50px;
 flex-direction:column;
-color:#ffffff;
-
+color:white;
+opacity:1;
+z-index:10;
 font-family: avenirNext_bold,sans-serif;
 
  max-width: 460px;
@@ -74,10 +129,10 @@ font-family: avenirNext_bold,sans-serif;
 }
 
 @media (max-width: 700px) {
-    top: 120px;
+    top: 80px;
     width:80%;
     justify-content:flex-start;
-    z-index:0;
+    z-index:10;
 &>h5{
     font-size:16px;
     font-weight:400;
@@ -107,4 +162,13 @@ font-family: avenirNext_bold,sans-serif;
 
 }
   }
+`
+
+export const StepperContainer=styled.div`
+display: flex;
+flex-direction:column;
+align-items:center;
+justify-content:space-between;
+
+
 `

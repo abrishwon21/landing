@@ -28,9 +28,11 @@ function Header() {
       <RightContainer>
           <NavbarLinkContainer>
             <NavbarLink to="/"> Home</NavbarLink>
-            <NavbarLink to="/products"> Products</NavbarLink>
-            <NavbarLink to="/contact"> Contact Us</NavbarLink>
+            <NavbarLink to="/service"> Service</NavbarLink>
+            <NavbarLink to="/indutsries"> Industries</NavbarLink>
             <NavbarLink to="/about"> About Us</NavbarLink>
+            <NavbarLink to="/contact"> Contact Us</NavbarLink>
+           
             <GetInTouch>Get in touch</GetInTouch>
             <OpenLinksButton
               onClick={() => {
@@ -46,9 +48,11 @@ function Header() {
       {extendNavbar && (
         <NavbarExtendedContainer>
           <NavbarLinkExtended to="/"> Home</NavbarLinkExtended>
-          <NavbarLinkExtended to="/products"> Products</NavbarLinkExtended>
-          <NavbarLinkExtended to="/contact"> Contact Us</NavbarLinkExtended>
+          <NavbarLinkExtended to="/service"> Service</NavbarLinkExtended>
+          <NavbarLinkExtended to="/indutsries"> Industries</NavbarLinkExtended>
           <NavbarLinkExtended to="/about"> About Us</NavbarLinkExtended>
+          <NavbarLinkExtended to="/contact"> Contact Us</NavbarLinkExtended>
+         
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>

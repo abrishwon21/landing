@@ -96,6 +96,8 @@ export const NavbarExtendedContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index:999;
+  background-color:black;
   @media (min-width: 700px) {
     display: none;
   }

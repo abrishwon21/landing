@@ -1,33 +1,73 @@
-import Carousel from 'react-bootstrap/Carousel';
+import React, { useState } from 'react'
 
-function Testimonial() {
+import {
+  TestimonialWrapper,
+  Testimony,
+TestimonialContainer,
+Profile,
+Message,
+
+TestimonialButton
+} from './Testimonial.style'
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+import Avatars from '../../layout/partials/avator';
+const Testimonial = ({testimonials}) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handlePrevClick = () => {
+    if (currentIndex === 0) {
+      setCurrentIndex(testimonials.length - 2)
+    } else {
+      setCurrentIndex(currentIndex - 2)
+    }
+  }
+
+  const handleNextClick = () => {
+    if (currentIndex === testimonials.length - 2) {
+      setCurrentIndex(0)
+    } else {
+      setCurrentIndex(currentIndex + 2)
+    }
+  }
+
   return (
-    <Carousel variant="dark">
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=f5f5f5"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=eee"
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+    
+
+    <TestimonialContainer>
+
+    <TestimonialButton onClick={handlePrevClick}><ArrowBackIosIcon/></TestimonialButton>
+
+
+
       
-    </Carousel>
-  );
+
+      <TestimonialWrapper >
+      {testimonials.map((testimonial, index) => (
+          <Testimony key={testimonial.id} active={index === currentIndex} >
+              <Profile>
+                  <Avatars url={testimonial.avator} className="profilePic"/>
+                  <div>
+                     <p>{testimonial.author}</p>
+                     <span>{testimonial.pTitle}</span>
+                  </div>
+              </Profile>
+              <Message>
+                      <p>{testimonial.text}</p>
+              </Message>
+          </Testimony>
+
+   
+
+      ))}
+      </TestimonialWrapper>
+
+      <TestimonialButton onClick={handleNextClick}><ArrowForwardIosIcon/></TestimonialButton>
+
+    </TestimonialContainer>
+  )
 }
 
 export default Testimonial;
