@@ -1,3 +1,27 @@
+@font-face {
+  font-family: GothamBold;
+  src: url("/public/gothamFont/Gotham-Bold.otf");
+  /* Gotham Pro,Helvetica,sans-serif; */
+}
+
+@font-face {
+  font-family: GothamThin;
+  src: url("/public/gothamFont/Gotham-Thin.otf");
+  /* Gotham Pro,Helvetica,sans-serif; */
+}
+@font-face {
+  font-family: GothamItalic;
+  src: url("/public/gothamFont/Gotham-UltraItalic.otf");
+  /* Gotham Pro,Helvetica,sans-serif; */
+}
+@font-face {
+  font-family: GothamBlack;
+  src: url("/public/gothamFont/Gotham-Black.otf");
+}
+@font-face {
+  font-family: GothamLight;
+  src: url("/public/gothamFont/Gotham-Light.otf");
+}
 *,
 *:before,
 *:after{

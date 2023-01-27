@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-function GridContainer({children,rws}) {
+function GridContainer({children,rws,cols}) {
 const GridBox=styled.div`
 display:grid;
-grid-template-columns: repeat(3,1fr);
+grid-template-columns: repeat(${cols},1fr);
 grid-template-rows:repeat(${rws},1fr);
 margin-left:10%;
 grid-gap: 30px;

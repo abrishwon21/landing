@@ -11,10 +11,14 @@ VideoCard,
 Wrapper
 } from './success.style'
 import { Link } from 'react-router-dom';
+import TitleContainer from '../../layout/partials/titleContainer';
 function Success({succes}) {
   return (
     <Wrapper>
-    <h2>Success cases</h2>
+    <TitleContainer tType="sucs">
+        <h2>Success cases</h2>
+    </TitleContainer>
+   
     {succes.map((s) => (
         <SuccessContainer key={s.id}>
        <TextCard>

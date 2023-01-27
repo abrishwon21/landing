@@ -72,7 +72,7 @@ export const TestimonialSlide = styled.div`
 margin-right:10px;
 box-sizing: border-box;
 border:none;
-
+position:relative;
 width:50%;
 padding: 10px;
 display:flex;

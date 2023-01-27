@@ -172,3 +172,14 @@ justify-content:space-between;
 
 
 `
+
+export const ProsContainer=styled.div`
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+
+@media(max-width:700px){
+    flex-direction:column;
+    align-items:center;
+}
+`

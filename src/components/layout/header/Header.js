@@ -21,7 +21,9 @@ function Header() {
     <NavbarContainer extendNavbar={extendNavbar}>
       <NavbarInnerContainer>
      <LeftContainer>
-      <h2 style={{color:'white'}}>Reveal</h2>
+     
+     <Logo src="rLogo.png"/>
+     
     </LeftContainer>
       
       

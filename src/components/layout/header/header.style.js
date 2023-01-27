@@ -8,6 +8,7 @@ export const NavbarContainer = styled.nav`
   background-color: rgb(19,18,20);
   display: flex;
   flex-direction: column;
+  
   @media (min-width: 700px) {
     height: 80px;
   }
@@ -39,11 +40,17 @@ export const NavbarLinkContainer = styled.div`
 `;
 
 export const NavbarLink = styled(Link)`
-  color: white;
-  font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  margin: 10px;
+  font-family: GothamLight,Helvetica,sans-serif;
+  
+    display: inline-block;
+    font-size: 14px;
+    padding: 11.5px 13px;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
   @media (max-width: 700px) {
     display: none;
   }
@@ -61,6 +68,7 @@ export const Logo = styled.img`
   margin: 10px;
   max-width: 180px;
   height: auto;
+  color:#FFFFFF;
 `;
 
 export const GetInTouch = styled.button`

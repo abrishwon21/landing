@@ -3,11 +3,7 @@ export const Wrapper=styled.div`
 width:100%;
 margin-top: 10rem;
 padding:0;
-&>h2{
-text-align:center;
-padding: 10px 20px;
 
-}
 `
 export const TextCard=styled.div`
 width:40%;

@@ -13,7 +13,8 @@ import {
     VidCover,
     Overlay,
     TContainer,
-    StepperContainer
+    StepperContainer,
+    ProsContainer
 
 } from './home.style';
 import Footer from '../../components/layout/footer/footer';
@@ -25,6 +26,7 @@ import CustomListNumber from '../../components/layout/partials/customListNumber'
 import VerticalLinearStepper from '../../components/layout/partials/customStepper';
 import CustomStepper from '../../components/layout/partials/customStepper';
 import { Link } from 'react-router-dom';
+import TeamModel from '../../components/layout/partials/teamModelContainer';
 
 const Home = ()=>{
 
@@ -183,6 +185,29 @@ const Home = ()=>{
           desc:"Hiring a dedicated software development team in Ukraine provides you with needed specialists under your complete control, just as with your in-house team. The only difference is the team works remotely and we handle all the administration."
         }
       ]
+
+      const pros=[
+        {
+          id:1,
+          ttl:"A cost-efficient alternative",
+          desc:"Numbers vary, but the average in-house rate is $70/hour while the average outsourced dedicated development team rate is $35/hour. You may find an outsourcing vendor that isn’t that much cheaper to work with, but they are sure to offer the efficiency you could never reach with your in-house team."
+        },
+        {
+          id:2,
+          ttl:"Transparent management and communication",
+          desc:"Once again, the outsource dedicated software development team is like an in-house team that works in a separate office. You’re managing them directly, and which includes a lot of daily communication. Plus, you always know what your team is doing and where they are on the progress scale at the moment."
+        },
+        {
+          id:3,
+          ttl:"No-fuss hiring",
+          desc:"When you hire a dedicated development team, you'll get the skills or talents that would have been hard to find otherwise. The vendor usually has a pool of professionals you can handpick candidates that fit your company principles best."
+        },
+        {
+          id:4,
+          ttl:"A committed team that adopts your culture",
+          desc:"It’s important for a new employee to understand your mission and help push the company toward the joint goal. You’d like to expect the same from your outsourcing partner, and a dedicated development team is most likely to adopt your culture and cheer for your company."
+        },
+      ]
     return (
     
         
@@ -198,7 +223,11 @@ const Home = ()=>{
             <div style={{ height: 20 }}></div>
             <button>Contact Us</button>
         </Overlay>
-            <h1 style={{textAlign:"center", fontSize:34, fontWeight:600}}>Client Testimonies </h1>
+            <TitleContainer tType="client">
+            
+              <h1 style={{textAlign:"center", fontSize:34, fontWeight:600}}>Client testimonials </h1>
+            
+              </TitleContainer> 
             <TContainer>
                 <VTestimonial vtestimonials={vtestimonials} />
 
@@ -209,10 +238,10 @@ const Home = ()=>{
 
                  </TContainer> 
 
-           <TitleContainer>
+           <TitleContainer tType="howwediffer">
                   <h1>How We Differ</h1>
            </TitleContainer>
-           <GridContainer rws={2}>
+           <GridContainer rws={2} cols={3}>
            {ourUniqueness.map((ourUnq) => (
                   <CustomListContainer key={ourUnq.id}>
                       <CustomListNumber>{ourUnq.id<10?"0" + ourUnq.id:ourUnq.id}</CustomListNumber>
@@ -226,8 +255,37 @@ const Home = ()=>{
            ))
            }
            </GridContainer>
-
+           <div>
            <TitleContainer>
+           <h6>The dedicated development team model is best suited for</h6>
+       </TitleContainer>
+       <TeamModel/>
+       <br/>
+       <br/>
+       <br/>
+       </div>
+          <ProsContainer>
+
+             <TitleContainer tType="pros">
+                      <h2>Pros of the Dedicated Development Team Model</h2>
+              </TitleContainer>
+              <GridContainer rws={2} cols={2}>
+              {pros.map((p) => (
+                      <CustomListContainer key={p.id}>
+                          
+                          <h3>
+                            {p.ttl}
+                          </h3>
+                          <p>
+                          {p.desc}
+                          </p>
+                      </CustomListContainer>
+              ))
+              }
+              </GridContainer>
+          </ProsContainer>
+
+           <TitleContainer tType="setup">
            <h3>Dedicated software development team set-up process</h3>
         </TitleContainer>
 
