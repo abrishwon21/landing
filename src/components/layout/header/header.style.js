@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 export const NavbarContainer = styled.nav`
   width: 100%;
@@ -8,7 +8,7 @@ export const NavbarContainer = styled.nav`
   background-color: rgb(19,18,20);
   display: flex;
   flex-direction: column;
-  
+  position:fixed;
   @media (min-width: 700px) {
     height: 80px;
   }

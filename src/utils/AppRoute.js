@@ -18,9 +18,9 @@ const AppRoute = () => {
      <AnimatePresence>
       <Routes location={location} key={location.pathname}>
       <Route path="/" element={<HomeLayout />} />
-      <Route path="/service" element={<ServiceLayout />} />
+      <Route path="#service" element={<ServiceLayout />} />
       <Route path="/industries" element={<IndustryLayout />} />
-      <Route path="/about" element={<AboutLayout />} />
+      <Route path="#about" element={<AboutLayout />} />
       <Route path="/contact" element={<ContactLayout />} />
     </Routes>
 

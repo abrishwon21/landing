@@ -29,11 +29,10 @@ function Header() {
       
       <RightContainer>
           <NavbarLinkContainer>
-            <NavbarLink to="/"> Home</NavbarLink>
-            <NavbarLink to="/service"> Service</NavbarLink>
-            <NavbarLink to="/indutsries"> Industries</NavbarLink>
-            <NavbarLink to="/about"> About Us</NavbarLink>
-            <NavbarLink to="/contact"> Contact Us</NavbarLink>
+            <NavbarLink smooth to="#home"> Home</NavbarLink>
+            <NavbarLink smooth to="#service"> Service</NavbarLink>
+            <NavbarLink smooth to="#about"> About Us</NavbarLink>
+            <NavbarLink smooth to="#contact"> Contact Us</NavbarLink>
            
             <GetInTouch>Get in touch</GetInTouch>
             <OpenLinksButton
@@ -49,11 +48,11 @@ function Header() {
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtended to="/"> Home</NavbarLinkExtended>
-          <NavbarLinkExtended to="/service"> Service</NavbarLinkExtended>
-          <NavbarLinkExtended to="/indutsries"> Industries</NavbarLinkExtended>
-          <NavbarLinkExtended to="/about"> About Us</NavbarLinkExtended>
-          <NavbarLinkExtended to="/contact"> Contact Us</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="#homr"> Home</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="#service"> Service</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="#indutsries"> Industries</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="#about"> About Us</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="#contact"> Contact Us</NavbarLinkExtended>
          
         </NavbarExtendedContainer>
       )}

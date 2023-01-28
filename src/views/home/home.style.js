@@ -46,14 +46,12 @@ width:100%;
 height:100vh;
 top:50px;
 
-@media (max-width: 700px) {
-    height:66vh;
-  }
 `
 export const Video=styled.video`
 width:100%;
 height:100%;
 object-fit:cover;
+margin: 0 auto;
 top:50px;
 `
 export const VidCover=styled.div`
@@ -63,11 +61,11 @@ height:100vh;
 width:100%;
 margin:0;
 background-color: #D8DCDD;
-opacity:0.6;
+opacity:0;
 z-index:1;
 @media (max-width: 700px) {
     height:60vh;
-    top:110px;
+   
   }
 `
 export const Overlay = styled.div`
@@ -86,39 +84,41 @@ opacity:1;
 z-index:10;
 font-family: avenirNext_bold,sans-serif;
 
- max-width: 460px;
     
     
 
 &>h5{
-    font-size:22px;
-    font-weight:500;
-    opacity:1;
+    font-size: 28px;
+    line-height: 1.14286;
+    margin-top: 0;
+    margin-bottom: 24px;
 }
 &>h1{
-    font-size:48px;
-    font-weight:600;
-    opacity:10;
+    font-size: 48px;
+    line-height: 1;
+    margin-top: 0;
 }
 
 &>p{
-    font-size:18px;
-    font-weight:400;
- 
-}
-&>div{
-    height:40px;
-    
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
+
 &>button{
-    font-size:22px;
-    font-weight:500;
-    padding:10px;
-    width:150px;
-    border-radius:20px;
-    border:none;
-    cursor:pointer;
+    margin-top: 32px;
+     position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+
+    align-items: center;
+     padding: 10px 20px;
+     border-radius: 10px;
+     border:none;
     &:hover{
         background-color:#49464A;
         color:#ffffff;
@@ -129,24 +129,21 @@ font-family: avenirNext_bold,sans-serif;
 }
 
 @media (max-width: 700px) {
-    top: 80px;
     width:80%;
-    justify-content:flex-start;
-    z-index:10;
+    padding: 0 17.5px;
 &>h5{
-    font-size:16px;
-    font-weight:400;
-    
+
+    margin-bottom: 12px;
+    font-size: 12px;
 }
 &>h1{
-    font-size:28px;
-    font-weight:500;
-    opacity:10;
+    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 1.2;
 }
 
 &>p{
-    font-size:14px;
-    font-weight:400;
+    margin-top: 16px;
  
 }
 

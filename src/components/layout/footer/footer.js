@@ -14,41 +14,8 @@ return (
 <Box>
 	<Container>
 		<Row>
-		<Column>
-			<Heading>About Us</Heading>
-			
-			<FooterLink href="#">Vision</FooterLink>
-			
-		</Column>
-		<Column>
-			<Heading>Services</Heading>
-			<FooterLink href="#">Techies</FooterLink>
-			
 		
-		</Column>
-		<Column>
-			<Heading>Contact Us</Heading>
-			<FooterLink href="#">
-			<i className="fab fa-facebook-f">
-				<span style={{ marginLeft: "10px" }}>
-				Bole, Addis Abeba
-				</span>
-			</i>
-			</FooterLink>
-		</Column>
-		<Column>
-			<Heading>Social Media</Heading>
-			<FooterLink href="#">
-			<i className="fab fa-facebook-f">
-				<span style={{ marginLeft: "10px" }}>
-				Facebook
-				</span>
-			</i>
-			</FooterLink>
-			
-			
 		
-		</Column>
 		</Row>
 		<span> Copyright © {new Date().getFullYear()} <Link>www.reveal.com</Link> </span>
 	</Container>

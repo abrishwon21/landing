@@ -1,4 +1,7 @@
 import { Divider } from '@mui/material';
+
+import {motion, useMotionValue} from 'framer-motion';
+
 import React from 'react';
 import bgVideo from '../../assets/video/bgv2.mp4'
 import SVideo from '../../assets/video/succs.mp4'
@@ -27,9 +30,12 @@ import VerticalLinearStepper from '../../components/layout/partials/customSteppe
 import CustomStepper from '../../components/layout/partials/customStepper';
 import { Link } from 'react-router-dom';
 import TeamModel from '../../components/layout/partials/teamModelContainer';
+import AboutLayout from '../../layouts/AboutLayout';
+import FaQs from '../faqs';
 
 const Home = ()=>{
 
+const y=useMotionValue(0);
 
     const vtestimonials=[
         {
@@ -212,17 +218,17 @@ const Home = ()=>{
     
         
         
-        <Banner>
+        <Banner id="home">
             <Video src={bgVideo} autoPlay muted loop />
             
-     <VidCover/>
           <Overlay>
             <h5>Dedicated Software Development Team</h5>
             <h1>Hire dedicated development team that fits your needs at scale</h1>
             <p>Alleviate the pressure of a backlog without hiring, training, and maintaining long-term salaries. Hire a dedicated software development team of hand-selected engineers.</p>
-            <div style={{ height: 20 }}></div>
+           
             <button>Contact Us</button>
         </Overlay>
+        
             <TitleContainer tType="client">
             
               <h1 style={{textAlign:"center", fontSize:34, fontWeight:600}}>Client testimonials </h1>
@@ -239,7 +245,7 @@ const Home = ()=>{
                  </TContainer> 
 
            <TitleContainer tType="howwediffer">
-                  <h1>How We Differ</h1>
+                  <h1 id="service">Get Services</h1>
            </TitleContainer>
            <GridContainer rws={2} cols={3}>
            {ourUniqueness.map((ourUnq) => (
@@ -256,45 +262,57 @@ const Home = ()=>{
            }
            </GridContainer>
            <div>
-           <TitleContainer>
-           <h6>The dedicated development team model is best suited for</h6>
-       </TitleContainer>
-       <TeamModel/>
-       <br/>
-       <br/>
-       <br/>
-       </div>
-          <ProsContainer>
 
-             <TitleContainer tType="pros">
-                      <h2>Pros of the Dedicated Development Team Model</h2>
+       </div>
+      
+
+        <TitleContainer tType="setup">
+          <h3>Dedicated software development team set-up process</h3>
+       </TitleContainer>
+
+         <StepperContainer>
+           <CustomStepper projectSetup={projectSetup}/>
+         </StepperContainer>
+
+
+
+              <ProsContainer>
+                <TitleContainer tType="pros" id="service">
+                  <h2>Pros of the Dedicated Development Team Model</h2>
               </TitleContainer>
+
               <GridContainer rws={2} cols={2}>
               {pros.map((p) => (
                       <CustomListContainer key={p.id}>
                           
-                          <h3>
-                            {p.ttl}
-                          </h3>
-                          <p>
-                          {p.desc}
-                          </p>
+                          <h3>{p.ttl}</h3>
+                          <p>{p.desc}</p>
                       </CustomListContainer>
               ))
               }
               </GridContainer>
           </ProsContainer>
+        
 
-           <TitleContainer tType="setup">
-           <h3>Dedicated software development team set-up process</h3>
+        <TitleContainer>
+          <h2 id="about">About Us</h2>
+      </TitleContainer>
+      <AboutLayout/>
+     
+            <Success succes={succes} />
+
+        <TitleContainer>
+            <h2 id="about">FAQs</h2>
+        </TitleContainer>
+            <FaQs/>
+
+            <TitleContainer>
+            <h2 id="contact">Contact Us</h2>
         </TitleContainer>
 
-          <StepperContainer>
-            <CustomStepper projectSetup={projectSetup}/>
-          </StepperContainer>
-     
-            <Success succes={succes}/>
-
+          <div style={{height:"200px",width:"100%", opacity:0}}>
+            Reveal is the right place
+          </div>
         </Banner>
    
         

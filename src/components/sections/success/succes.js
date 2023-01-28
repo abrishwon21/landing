@@ -19,6 +19,7 @@ function Success({succes}) {
         <h2>Success cases</h2>
     </TitleContainer>
    
+
     {succes.map((s) => (
         <SuccessContainer key={s.id}>
        <TextCard>
