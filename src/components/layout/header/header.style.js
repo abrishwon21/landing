@@ -4,8 +4,8 @@ import { HashLink as Link } from "react-router-hash-link";
 export const NavbarContainer = styled.nav`
   width: 100%;
   z-index:99;
-  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: rgb(19,18,20);
+  height: ${(props) => (props.extendNavbar ? "100vh" : "60px")};
+  background-color: #262626;
   display: flex;
   flex-direction: column;
   position:fixed;
@@ -58,7 +58,7 @@ export const NavbarLink = styled(Link)`
 
 export const NavbarLinkExtended = styled(Link)`
   color: white;
-  font-size: large;
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   margin: 10px;
@@ -76,11 +76,15 @@ font-size: 16px;
 font-weight:500;
 font-family: Arial, Helvetica, sans-serif;
 text-decoration: none;
-width:120px;
+padding: 6px 12px 4px;
+background:color:#fff;
 border-radius:20px;
+
 &:hover{
-background-color:black;
+background-color:#262626;
 color:white;
+border: 1px solid #ffff;
+transition: all .2s ease-in-out;
 }
 @media (max-width: 700px) {
   display: none;
@@ -105,7 +109,7 @@ export const NavbarExtendedContainer = styled.div`
   flex-direction: column;
   align-items: center;
   z-index:999;
-  background-color:black;
+  background-color:#262626;
   @media (min-width: 700px) {
     display: none;
   }

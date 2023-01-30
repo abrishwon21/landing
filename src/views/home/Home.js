@@ -2,12 +2,24 @@ import { Divider } from '@mui/material';
 
 import {motion, useMotionValue} from 'framer-motion';
 
-import React from 'react';
-import bgVideo from '../../assets/video/bgv2.mp4'
+import React,{useState} from 'react';
+import bgVideo from '../../assets/video/dedicated-team.mp4'
 import SVideo from '../../assets/video/succs.mp4'
 import Svenn from '../../assets/video/svenn.mp4'
 import Avatar1 from '../../assets/images/avator1.jpg';
 import avator from '../../assets/images/avator2.jpg';
+//review logos
+import ClutchLogo from '../../assets/icons/membership/clutchlogo.png';
+import GoodFirmsLogo from '../../assets/icons/membership/logo-goodfirms-1.svg';
+import GartnerLogo from '../../assets/icons/membership/gartner_peer_insights-1.png';
+import NuccLogo from '../../assets/icons/membership/nucc-1.svg';
+
+//service imgs
+
+import MobileImg from '../../assets/images/mobile-dev1.jpg'
+import WebImg from '../../assets/images/web-dev.jpg'
+import SoftImg from '../../assets/images/software.png'
+
 import Testimonial from '../../components/sections/testimonial/Testimonial';
 import VTestimonial from '../../components/sections/testimonial/vTestimonial';
 import {
@@ -17,7 +29,10 @@ import {
     Overlay,
     TContainer,
     StepperContainer,
-    ProsContainer
+    ProsContainer,
+    ReviewCardContainer,
+    ReviewCard,
+    LogoLink
 
 } from './home.style';
 import Footer from '../../components/layout/footer/footer';
@@ -32,8 +47,18 @@ import { Link } from 'react-router-dom';
 import TeamModel from '../../components/layout/partials/teamModelContainer';
 import AboutLayout from '../../layouts/AboutLayout';
 import FaQs from '../faqs';
+import Contact from '../contact/contactUs';
+import PopUp from '../../components/layout/partials/popUp';
+import Service from '../../components/sections/services/service';
 
 const Home = ()=>{
+
+  const [openPopUp, setOpenPopUp]=useState(false);
+
+  const handleOpenPopUp=()=>{
+    setOpenPopUp(true);
+  }
+
 
 const y=useMotionValue(0);
 
@@ -105,25 +130,31 @@ const y=useMotionValue(0);
           country:"Norway",
           vUrl:SVideo
         },
+      ]
+      const service=[
 
         {
+          id:1,
+          title:"Mobile App",
+          msg:"We have helped a lot of industries transforming their business into digital. Mobile app is a great software that can maximize your profit with low investment.",
+      
+          imgUrl:MobileImg
+        },
+        {
           id:2,
-          title:"Svenn",
-          msg:"Reducing paperwork for construction companies",
-          serviceType:"Construction",
-          country:"Norway",
-          vUrl:Svenn
+          title:"Website Development",
+          msg:"We are a web-technology experts. We work on cutting-edge technologies to deliver a secure, responsive and SEO friendly websites.",
+      
+          imgUrl:WebImg
         },
         {
           id:3,
-          title:"Kaizo",
-          msg:"Gamifying customer support with a Zendesk app",
-          serviceType:"Management",
-          country:"The Netherlands",
-          vUrl:Svenn
-        }
+          title:"Have Any Idea?",
+          msg:"We can develop any type of softwares for any industries.",
+      
+          imgUrl:SoftImg
+        },
       ]
-
       //why we differ?
       const ourUniqueness=[
         {
@@ -214,6 +245,24 @@ const y=useMotionValue(0);
           desc:"It’s important for a new employee to understand your mission and help push the company toward the joint goal. You’d like to expect the same from your outsourcing partner, and a dedicated development team is most likely to adopt your culture and cheer for your company."
         },
       ]
+      const review = [
+        {
+          id:1,
+          logo:ClutchLogo,
+        },
+        {
+          id:2,
+          logo:GoodFirmsLogo,
+        },
+        {
+          id:3,
+          logo:GartnerLogo,
+        },
+        {
+          id:4,
+          logo:NuccLogo,
+        }
+      ]
     return (
     
         
@@ -223,30 +272,46 @@ const y=useMotionValue(0);
             
           <Overlay>
             <h5>Dedicated Software Development Team</h5>
-            <h1>Hire dedicated development team that fits your needs at scale</h1>
-            <p>Alleviate the pressure of a backlog without hiring, training, and maintaining long-term salaries. Hire a dedicated software development team of hand-selected engineers.</p>
+            <h1>Harness The Power of High-Functioning Remote Team.</h1>
+            <p>Build your full-time dedicated remote team based on skill set, seniority, and industry experience. We handle all the administration, taxes and complaints.</p>
            
-            <button>Contact Us</button>
+            <button onClick={handleOpenPopUp} setOpen={()=>setOpenPopUp(false)}>Contact Us</button>
         </Overlay>
+    
+
         
-            <TitleContainer tType="client">
+         {  
+        //     <TitleContainer tType="client">
             
-              <h1 style={{textAlign:"center", fontSize:34, fontWeight:600}}>Client testimonials </h1>
+        //       <h1 style={{textAlign:"center", fontSize:34, fontWeight:600}}>Client testimonials </h1>
             
-              </TitleContainer> 
-            <TContainer>
-                <VTestimonial vtestimonials={vtestimonials} />
+        //       </TitleContainer> 
+        //     <TContainer>
+                //<VTestimonial vtestimonials={vtestimonials} />
 
-                 {  
                   //  <Testimonial testimonials={testimonials} />
-                  }
-                 <Link to="#" className='newBtn'>GET A QUOTE FOR YOUR PROJECT</Link>
+                //   }
+                //  <Link to="#" className='newBtn'>GET A QUOTE FOR YOUR PROJECT</Link>
 
-                 </TContainer> 
-
-           <TitleContainer tType="howwediffer">
-                  <h1 id="service">Get Services</h1>
-           </TitleContainer>
+                //  </TContainer> 
+                }
+   
+        {openPopUp &&<PopUp open={openPopUp} close={(v)=>setOpenPopUp(v)}/>
+       
+    
+      }
+        <ReviewCardContainer>
+            <ReviewCard >
+              { review.map((rv)=>(
+                    <LogoLink to="#" key={rv.id}><img src={rv.logo}/></LogoLink>
+                    ))}
+          </ReviewCard>
+        </ReviewCardContainer>
+              <span id="service"></span>
+              <Service service={service} />
+          <TitleContainer tType="howwediffer">
+              <h1 >Get Services</h1>
+        </TitleContainer>
            <GridContainer rws={2} cols={3}>
            {ourUniqueness.map((ourUnq) => (
                   <CustomListContainer key={ourUnq.id}>
@@ -294,22 +359,30 @@ const y=useMotionValue(0);
           </ProsContainer>
         
 
-        <TitleContainer>
-          <h2 id="about">About Us</h2>
-      </TitleContainer>
-      <AboutLayout/>
      
             <Success succes={succes} />
 
         <TitleContainer>
-            <h2 id="about">FAQs</h2>
+            <h2 id="about"
+            style={
+              {
+                color: "#212121",
+                fontSize: "36px",
+                fontWeight: 300,
+                lineHeight: "36px",
+                letterSpacing: "-.7px",
+                textAlign: "center",
+                marginBottom: "32px",
+              }
+            }>FAQs</h2>
         </TitleContainer>
-            <FaQs/>
-
-            <TitleContainer>
-            <h2 id="contact">Contact Us</h2>
+         <FaQs/>
+        <span id="contact"></span>
+        <TitleContainer>
+            <h2 >Contact Us</h2>
         </TitleContainer>
-
+          <Contact/>
+          
           <div style={{height:"200px",width:"100%", opacity:0}}>
             Reveal is the right place
           </div>

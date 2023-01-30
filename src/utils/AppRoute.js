@@ -20,8 +20,8 @@ const AppRoute = () => {
       <Route path="/" element={<HomeLayout />} />
       <Route path="#service" element={<ServiceLayout />} />
       <Route path="/industries" element={<IndustryLayout />} />
-      <Route path="#about" element={<AboutLayout />} />
-      <Route path="/contact" element={<ContactLayout />} />
+      <Route path="/about" element={<AboutLayout />} />
+      <Route path="#contact" element={<ContactLayout />} />
     </Routes>
 
       </AnimatePresence>

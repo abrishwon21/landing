@@ -14,9 +14,21 @@ import {
 } from "./header.style";
 
 import Home from '../../../views/home/Home';
+import PopUp from "../partials/popUp";
+import Contact from "../../../views/contact/contactUs";
+
+
 function Header() {
   const [extendNavbar, setExtendNavbar] = useState(false);
 
+  const [openPopUp, setOpenPopUp]=useState(false);
+
+  const handleOpenPopUp=()=>{
+    setOpenPopUp(true);
+  }
+  const menuToggler=() => {
+    setExtendNavbar((curr) => !curr);
+  }
   return (
     <NavbarContainer extendNavbar={extendNavbar}>
       <NavbarInnerContainer>
@@ -29,16 +41,14 @@ function Header() {
       
       <RightContainer>
           <NavbarLinkContainer>
-            <NavbarLink smooth to="#home"> Home</NavbarLink>
-            <NavbarLink smooth to="#service"> Service</NavbarLink>
-            <NavbarLink smooth to="#about"> About Us</NavbarLink>
-            <NavbarLink smooth to="#contact"> Contact Us</NavbarLink>
+            <NavbarLink smooth to="/"> Home</NavbarLink>
+            <NavbarLink smooth to="/#service"> Service</NavbarLink>
+            <NavbarLink smooth to="/about"> About Us</NavbarLink>
+            <NavbarLink smooth to="/#contact"> Contact Us</NavbarLink>
            
-            <GetInTouch>Get in touch</GetInTouch>
+            <GetInTouch onClick={handleOpenPopUp}>Get in touch</GetInTouch>
             <OpenLinksButton
-              onClick={() => {
-                setExtendNavbar((curr) => !curr);
-              }}
+              onClick={menuToggler}
             >
               {extendNavbar ? <Fragment>&#10005;</Fragment> : <Fragment> &#8801;</Fragment>}
             </OpenLinksButton>
@@ -47,15 +57,17 @@ function Header() {
 
       </NavbarInnerContainer>
       {extendNavbar && (
-        <NavbarExtendedContainer>
-          <NavbarLinkExtended smooth to="#homr"> Home</NavbarLinkExtended>
-          <NavbarLinkExtended smooth to="#service"> Service</NavbarLinkExtended>
-          <NavbarLinkExtended smooth to="#indutsries"> Industries</NavbarLinkExtended>
-          <NavbarLinkExtended smooth to="#about"> About Us</NavbarLinkExtended>
-          <NavbarLinkExtended smooth to="#contact"> Contact Us</NavbarLinkExtended>
-         
+        <NavbarExtendedContainer onClick={menuToggler}>
+          <NavbarLinkExtended smooth to="/"> Home</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="/#service"> Service</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="/about"> About Us</NavbarLinkExtended>
+          <NavbarLinkExtended smooth to="/#contact"> Contact Us</NavbarLinkExtended>
+          <GetInTouch onClick={handleOpenPopUp}>Get in touch</GetInTouch>
         </NavbarExtendedContainer>
       )}
+      {
+        openPopUp && <PopUp open={openPopUp} close={(v)=>setOpenPopUp(v)} />
+             }
     </NavbarContainer>
   );
 }

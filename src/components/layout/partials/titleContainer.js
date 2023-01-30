@@ -6,6 +6,13 @@ margin-top: 2rem;
 margin-bottom:2rem;
 text-align:center;
 
+    margin-top: -30px;
+
+    background-color: #fff;
+    padding-top: 166px;
+    padding-bottom: 125px;
+
+
 color: #212121;
 font-size: 36px;
 font-weight: 300;
@@ -58,6 +65,11 @@ ${props => props.typ==='pros' && css`
     display: inline-block;
     word-break: normal;
     text-align:center;
+
+    
+    background-color: #fff;
+    padding-top: 166px;
+    padding-bottom: 1px;
     &::before{
       position:absolute;
       content:"";
