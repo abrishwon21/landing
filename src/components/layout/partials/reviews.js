@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 //review logos
@@ -6,10 +6,17 @@ import ClutchLogo from '../../../assets/icons/membership/clutchlogo.png';
 import GoodFirmsLogo from '../../../assets/icons/membership/logo-goodfirms-1.svg';
 import GartnerLogo from '../../../assets/icons/membership/gartner_peer_insights-1.png';
 import NuccLogo from '../../../assets/icons/membership/nucc-1.svg';
+import { LineAxisOutlined } from '@mui/icons-material';
 
 function Reviews() {
 
 
+  useEffect(
+    ()=>{
+     
+    },
+    []
+  )
 const ReviewCard=styled.div`
 padding:0;
 margin-left:0;
