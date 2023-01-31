@@ -116,6 +116,7 @@ export default function ContactInputForm() {
     
       noValidate
       autoComplete="off"
+      style={{width:"100%"}}
     >
  
     
@@ -123,7 +124,7 @@ export default function ContactInputForm() {
       
      
 
-      <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+      <FormControl fullWidth maxWidth sx={{ m: 1 }} variant="standard">
          <Input placeholder="name" inputProps={ariaLabel} />
      
      </FormControl>

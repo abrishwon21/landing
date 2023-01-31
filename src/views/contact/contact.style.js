@@ -41,8 +41,11 @@ export const InnerContactForm=styled.div`
     font-size: 18px;
     font-weight: 400;
 
-    @media only screen and (max-width: 769px) {
-    display: block;
+    @media only screen and (max-width: 700px) {
+  
+    width:100%;
+    padding:0;
+    margin:0 auto;
 }
 ` 
 
@@ -56,9 +59,9 @@ export const ContactForm=styled.div`
     font-size: 18px;
     font-weight: 400;
 
-    @media only screen and (max-width: 769px){
+    @media only screen and (max-width: 700px){
     width: 100%;
-    padding: 40px 56px;
+    padding-left:0;
 }
 `
 
@@ -92,6 +95,12 @@ export const TitleCard=styled.div`
     margin: 0;
     margin-bottom: 14px;
     max-width: 100%;
+    @media(max-width:700px){
+        font-size:16px;
+        letter-spacing:-0.3px;
+        width:100%;
+        text-align:center;
+    }
 `
 export const ContactInfoCard=styled.div`
 display:block;

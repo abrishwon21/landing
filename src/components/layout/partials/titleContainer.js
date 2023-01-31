@@ -74,7 +74,7 @@ ${props => props.typ==='pros' && css`
       position:absolute;
       content:"";
       bottom: 0;
-      width: 100%;
+     
       right:0;
       left: 0;
       

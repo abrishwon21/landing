@@ -183,8 +183,11 @@ font-size: 48px;
 }
 
 @media (max-width: 700px) {
-    width:80%;
+    width:100%;
     padding: 0 17.5px;
+    left:2%
+    top:20px;
+    margin-bottom:10px;
 &>h5{
 
     margin-bottom: 12px;

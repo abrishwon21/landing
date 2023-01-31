@@ -64,8 +64,11 @@ padding-left:1.5rem;
 }
 
 @media(max-width:700px){
-width:80%;
+width:90%;
 padding:0;
+margin-left:0;
+align-items:center;
+
 }
 
 `

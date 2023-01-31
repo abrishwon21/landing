@@ -20,7 +20,10 @@ export default function CostumFAQAccordion({faqs}) {
   
   margin: 1rem auto;
  
-
+ @media(max-width:700px){
+  width:100%;
+  margin:0 auto;
+ }
 
 .acc{
     box-shadow: 0px 2px 20px rgb(0 0 0 / 8%);
@@ -28,7 +31,7 @@ export default function CostumFAQAccordion({faqs}) {
     background-color: #fff;
     padding: 32px 24px;
     margin-bottom: 24px;
-
+    width:100%;
 
   }
   .titl{
@@ -55,12 +58,12 @@ export default function CostumFAQAccordion({faqs}) {
 
         <Accordion classame='acc' expanded={expanded === "panel"+fq.id} onChange={handleChange('panel'+fq.id)}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+
             aria-controls={`"panel+${fq.id}+bh-content"`}
             id={`"panel+${fq.id}+bh-header"`}
   
           >
-            <Typography sx={{ width: '60%', flexShrink: 0 }} className='titl'>
+            <Typography sx={{ width: '90%', flexShrink: 0 }} className='titl'>
              <span 
               style={
                 {
@@ -68,6 +71,7 @@ export default function CostumFAQAccordion({faqs}) {
                   lineHeight: 1,
                   position: "relative",
                   cursor: "pointer",
+
                  
                 }
               }
